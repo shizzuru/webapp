@@ -25,5 +25,5 @@ func main() {
 	http.HandleFunc("/", home)
 
 	go http.ListenAndServe(":80", http.HandlerFunc(redirect))
-	log.Fatal(http.ListenAndServeTLS(":443", "/etc/letsencrypt/live/catbox.space/fullchain.pem", "/etc/letsencrypt/live/catbox.space/privkey.pem", nil))
+	log.Fatal(http.ListenAndServeTLS(":443", "tls/fullchain.pem", "tls/privkey.pem", nil))
 }
